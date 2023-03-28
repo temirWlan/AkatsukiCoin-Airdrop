@@ -24,8 +24,17 @@ function connectWallet() {
 }
 
 async function claim() {
-
+    claimBtn.classList.remove("btn-primary");
+    claimBtn.classList.add("btn-info");
+    claimBtn.textContent = "Claimed";
 }
 
-connectWalletBtn.addEventListener("click", connectWallet);
-claimBtn.addEventListener("click", claim);
+if (!window.ethereum._state.isConnected) {
+    claimBtn.style.display = "none";
+    connectWalletBtn.style.display = "block";
+    connectWalletBtn.addEventListener("click", connectWallet);
+} else {
+    connectWalletBtn.style.display = "none";
+    claimBtn.style.display = "block";
+    claimBtn.addEventListener("click", claim);
+}

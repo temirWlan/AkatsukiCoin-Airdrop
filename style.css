@@ -1,3 +1,16 @@
 .wrapper {
     margin-top: 10%;
 }
+
+.wrapper__btns .btn {
+    width: 200px;
+}
+
+.wrapper__btns .btn:not(:first-child) {
+    margin-top: 15px;
+}
+
+.connect-wallet-btn,
+.claim-btn {
+    display: none;
+}
